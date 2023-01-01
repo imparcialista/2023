@@ -1,10 +1,33 @@
-<meta charset="utf-8">
-<h1>meu primeiro teste</h1>
+<meta charset='utf-8'>
+<h1>Meu primeiro teste</h1>
 Seria isso um programa?
 <br>
-Descubra visitando o alura <a href="http://www.alura.com.br">aqui</a>
+Descubra visitando o alura <a href='http://www.alura.com.br'>aqui</a>
 <br>
 
 <script>
-    alert("Isso sim é um programa");
+
+    var ano = 2022
+    pl = '<br>'
+
+
+    document.write(pl)
+    document.write('Flavio tem ' + (ano - 1977) + ' anos' + pl);
+    document.write('Joaquim tem ' + (ano - 1996) + ' anos' + pl);
+    document.write('Lucas tem ' + (ano - 2000) + ' anos' + pl);
+
+    var idadeFlavio = (ano - 1977)
+    var idadeJoaquim = (ano - 1996)
+    var idadeLucas = (ano - 2000)
+
+    document.write(pl)
+    document.write('Flavio tem ' + idadeFlavio + ' anos' + pl);
+    document.write('Joaquim tem ' + idadeJoaquim + ' anos' + pl);
+    document.write('Lucas tem ' + idadeLucas + ' anos' + pl);
+
+    var media_das_idades = (idadeFlavio + idadeJoaquim + idadeLucas)/3
+    document.write(pl + 'A média das idades é: ' + Math.round(media_das_idades))
+
+
 </script>
+
