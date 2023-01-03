@@ -5,28 +5,72 @@
     <title>Meu programa</title>
 </head>
 <body>
-<h1>Meu primeiro teste</h1>
-Seria isso um programa?
-<br>
-Descubra visitando o alura <a href='http://www.alura.com.br'>aqui</a>
-<br>
 
 <script>
 
-    var ano = 2022
-    pl = '<br>'
+    function pularLinha(){
 
-    var idadeFlavio = (ano - 1977)
-    var idadeJoaquim = (ano - 1996)
-    var idadeLucas = (ano - 2000)
+        document.write('<br>')
 
-    document.write(pl)
-    document.write('Flavio tem ' + idadeFlavio + ' anos' + pl);
-    document.write('Joaquim tem ' + idadeJoaquim + ' anos' + pl);
-    document.write('Lucas tem ' + idadeLucas + ' anos' + pl);
+    }
+
+    function mostra(texto){
+
+        document.write(texto);
+        pularLinha();
+
+    }
+
+    mostra('<h1>Meu primeiro teste</h1>');
+    mostra('Seria isso um programa?');
+    mostra('Descubra visitando o alura <a href="http://www.alura.com.br">aqui</a>');
+
+    var ano = 2022;
+    var idadeFlavio = (ano - 1977);
+    var idadeJoaquim = (ano - 1996);
+    var idadeLucas = (ano - 2000);
+
+    //document.write('Flavio tem ' + idadeFlavio + ' anos');
+    //pularLinha();
+    //document.write('Joaquim tem ' + idadeJoaquim + ' anos');
+    //pularLinha();
+    //document.write('Lucas tem ' + idadeLucas + ' anos');
+    //pularLinha();
+
+    pularLinha();
+    mostra('Flavio tem ' + idadeFlavio + ' anos');
+    mostra('Joaquim tem ' + idadeJoaquim + ' anos');
+    mostra('Lucas tem ' + idadeLucas + ' anos');
 
     var media_das_idades = (idadeFlavio + idadeJoaquim + idadeLucas)/3
-    document.write(pl + 'A média das idades é: ' + Math.round(media_das_idades))
+    mostra('A média das idades é: ' + Math.round(media_das_idades));
+
+    function calculaImc(peso, altura){
+
+        return imc = peso / (altura * altura);
+
+    }
+
+    var imcFlavio = calculaImc(73, 1.71);
+    var imcAmigo = calculaImc(68, 1.72);
+
+    pularLinha();
+    mostra(imcFlavio);
+    mostra(imcAmigo);
+
+    //var nome = prompt('Qual o seu nome?');
+    //var alturaInformada = prompt('Informe a sua altura');
+    //var pesoInformado = prompt('Informe o seu peso');
+    
+    //calculaImc(pesoInformado, alturaInformada)
+
+    //mostra(nome + ', o seu IMC Calculado é: ' + imc)
+
+    var vitorias = parseInt(prompt('Entre com o número de vitórias '));
+    var empates = parseInt(prompt('Entre com o número de empates'));
+    var pontos = (vitorias * 3) + empates;
+
+    mostra('Os pontos do seu time são: ' + pontos);
 
 
 </script>
