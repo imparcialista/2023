@@ -2,9 +2,35 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Meu programa</title>
 </head>
 <body>
+<h1>Meu primeiro teste</h1>
+Seria isso um programa?
+<br>
+Descubra visitando o alura <a href='http://www.alura.com.br'>aqui</a>
+<br>
+
+<script>
+
+    var ano = 2022
+    pl = '<br>'
+
+    var idadeFlavio = (ano - 1977)
+    var idadeJoaquim = (ano - 1996)
+    var idadeLucas = (ano - 2000)
+
+    document.write(pl)
+    document.write('Flavio tem ' + idadeFlavio + ' anos' + pl);
+    document.write('Joaquim tem ' + idadeJoaquim + ' anos' + pl);
+    document.write('Lucas tem ' + idadeLucas + ' anos' + pl);
+
+    var media_das_idades = (idadeFlavio + idadeJoaquim + idadeLucas)/3
+    document.write(pl + 'A média das idades é: ' + Math.round(media_das_idades))
+
+
+</script>
+
 
 </body>
 </html>
