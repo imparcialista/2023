@@ -57,6 +57,7 @@
     pularLinha();
     mostra(imcFlavio);
     mostra(imcAmigo);
+    pularLinha();
 
     //var nome = prompt('Qual o seu nome?');
     //var alturaInformada = prompt('Informe a sua altura');
@@ -66,11 +67,34 @@
 
     //mostra(nome + ', o seu IMC Calculado é: ' + imc)
 
+    //if(imc >= 18.5 && imc <= 35) {
+
+    //    mostra("Seu IMC está excelente!");
+
+    //}
+
     var vitorias = parseInt(prompt('Entre com o número de vitórias '));
     var empates = parseInt(prompt('Entre com o número de empates'));
     var pontos = (vitorias * 3) + empates;
 
     mostra('Os pontos do seu time são: ' + pontos);
+
+    if(pontos > 28) {
+
+        mostra("Seu time está melhor do que no ano passado.");
+
+    }
+
+    if(pontos < 28) {
+
+        mostra("Seu time está pior do que no ano passado.");
+    }
+
+    if(pontos == 28) {
+
+        mostra("Seu time está igual igual ao ano passado.");
+
+    }
 
 
 </script>
