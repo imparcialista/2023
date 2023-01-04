@@ -6,19 +6,18 @@
 </head>
 <body>
 
+    <input/>
+    <button>Compare com o meu segredo</button>
+
 <script>
 
     function pularLinha(){
-
         document.write('<br>')
-
     }
 
     function mostra(texto){
-
         document.write(texto);
         pularLinha();
-
     }
 
     mostra('<h1>Meu primeiro teste</h1>');
@@ -46,9 +45,7 @@
     mostra('A média das idades é: ' + Math.round(media_das_idades));
 
     function calculaImc(peso, altura){
-
         return imc = peso / (altura * altura);
-
     }
 
     var imcFlavio = calculaImc(73, 1.71);
@@ -68,37 +65,96 @@
     //mostra(nome + ', o seu IMC Calculado é: ' + imc)
 
     //if(imc >= 18.5 && imc <= 35) {
-
     //    mostra("Seu IMC está excelente!");
-
     //}
 
-    var vitorias = parseInt(prompt('Entre com o número de vitórias '));
-    var empates = parseInt(prompt('Entre com o número de empates'));
-    var pontos = (vitorias * 3) + empates;
+    //var vitorias = parseInt(prompt('Entre com o número de vitórias '));
+    //var empates = parseInt(prompt('Entre com o número de empates'));
+    //var pontos = (vitorias * 3) + empates;
 
-    mostra('Os pontos do seu time são: ' + pontos);
+    //mostra('Os pontos do seu time são: ' + pontos);
 
-    if(pontos > 28) {
+    //if(pontos > 28) {
+    //    mostra("Seu time está melhor do que no ano passado.");
+    //}
 
-        mostra("Seu time está melhor do que no ano passado.");
+    //if(pontos < 28) {
+    //    mostra("Seu time está pior do que no ano passado.");
+
+    //}
+    //if(pontos == 28) {
+    //    mostra("Seu time está igual igual ao ano passado.");
+    //}
+
+    
+    //var segredo = Math.round(Math.random() * 10);
+
+    function sorteia(){
+        return Math.round(Math.random() * 10);
+    }
+
+    function sorteiaNumeros(quantidade){
+
+        var segredos = [];
+        var numero = 1;
+
+        while(numero <= quantidade){
+            
+            var numeroAleatorio = sorteia();
+
+            if(numeroAleatorio !== 0){
+                var achou = false;
+                
+                for(var posicao = 0; posicao < segredos.length; posicao++){
+
+                    if(segredos[posicao] == numeroAleatorio){
+                        achou = true;
+                        break;
+                    }
+                }
+
+                if(achou == false){
+                    segredos.push(numeroAleatorio);
+                    numero++;
+                }
+            }
+        }
+
+        //console.log(segredos)
+        return segredos;
+    }
+
+    var segredos = sorteiaNumeros(5);
+
+
+    var input = document.querySelector("input");
+        input.focus();
+
+    function verifica() {
+
+    var achou = false;
+
+    for(var posicao = 0; posicao < segredos.length; posicao++) {
+        if(input.value == segredos[posicao]) {
+            alert("Você acertou!");
+            achou = true;
+            break;
+        }
+    }
+
+    if(achou == false) {
+        alert("Você errou!");
+    }
+
+    input.value = "";
+    input.focus();
 
     }
 
-    if(pontos < 28) {
-
-        mostra("Seu time está pior do que no ano passado.");
-    }
-
-    if(pontos == 28) {
-
-        mostra("Seu time está igual igual ao ano passado.");
-
-    }
-
+    var button = document.querySelector("button");
+    button.onclick = verifica;
 
 </script>
-
 
 </body>
 </html>
